@@ -90,6 +90,26 @@ window.onload = function () {
     registerGUIEvents();
     //Register GUI settings.
     registerGUISettings();
+	//Download the BIOS:
+    downloadBIOS();
+}
+function downloadBIOS() {
+    downloadFile("bin/GBA.BIOS", registerBIOS);
+}
+function registerBIOS() {
+    processDownload(this, attachBIOS);
+    //Load default.gba rom
+    downloadROM('default');
+}
+function downloadROM(gamename) {
+    downloadFile("bin/" + gamename + ".gba", registerROM);
+}
+function registerROM() {
+    clearTempString();
+    processDownload(this, attachROM)
+    IodineGUI.Iodine.toggleSkipBootROM(true)
+    IodineGUI.Blitter.setSmoothScaling(false)
+    document.getElementById("play").click()
 }
 function registerIodineHandler() {
     try {
