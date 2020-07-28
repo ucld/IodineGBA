@@ -536,12 +536,12 @@ function speedChangeFunc() {
     IodineGUI.Iodine.setSpeed(+speed);
 }
 function writeRedTemporaryText(textString) {
-    if (IodineGUI.GUITimerID) {
+    /*if (IodineGUI.GUITimerID) {
         clearTimeout(IodineGUI.GUITimerID);
     }
     document.getElementById("tempMessage").style.display = "block";
     document.getElementById("tempMessage").textContent = textString;
-    IodineGUI.GUITimerID = setTimeout(clearTempString, 5000);
+    IodineGUI.GUITimerID = setTimeout(clearTempString, 5000);*/
 }
 function clearTempString() {
     document.getElementById("tempMessage").style.display = "none";
