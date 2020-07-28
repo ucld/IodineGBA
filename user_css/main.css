@@ -104,6 +104,7 @@ canvas.texturePixelated {
 
 /* top level menu */
 div#menu {
+    display: none;
     position: absolute;
     z-index: 1;
     width: 100%;
